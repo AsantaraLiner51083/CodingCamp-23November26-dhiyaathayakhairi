@@ -1,0 +1,334 @@
+
+/* =========================================
+   1. GLOBAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #263238;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* =========================================
+   2. APPLICATION HEADER
+========================================= */
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.app-header p {
+    color: #64748b;
+}
+
+/* =========================================
+   3. SECTION STYLING
+========================================= */
+
+section {
+    background-color: #ffffff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #334155;
+}
+
+/* =========================================
+   4. TOTAL BALANCE
+========================================= */
+
+.balance-section {
+    text-align: center;
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.balance-section h2 {
+    color: #ffffff;
+}
+
+#total-balance {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* =========================================
+   5. FORM STYLING
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.transaction-controls select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #263238;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* =========================================
+   6. BUTTONS
+========================================= */
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#transaction-form button {
+    width: 100%;
+}
+
+/* =========================================
+   7. TRANSACTION HISTORY
+========================================= */
+
+.transaction-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.transaction-controls select {
+    max-width: 220px;
+}
+
+#transaction-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#empty-message {
+    text-align: center;
+    color: #94a3b8;
+    padding: 15px;
+}
+
+/* =========================================
+   8. BUDGET WARNING
+========================================= */
+
+.budget-warning {
+    background-color: #fff7ed;
+    border: 1px solid #fdba74;
+    color: #c2410c;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* =========================================
+   9. CHART
+========================================= */
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin: auto;
+}
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+.app-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.app-footer p {
+    margin-top: 12px;
+    color: #64748b;
+}
+
+/* =========================================
+   11. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .app-header h1 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    #total-balance {
+        font-size: 30px;
+    }
+
+    .transaction-controls {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .transaction-controls select {
+        max-width: 100%;
+    }
+
+    .chart-container {
+        height: 280px;
+    }
+}
+
+
+/* TRANSACTION ITEM LAYOUT */
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.transaction-information {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+.transaction-information strong {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.transaction-information span {
+    white-space: nowrap;
+}
+
+.transaction-information span:last-child {
+    font-weight: bold;
+}
+
+.delete-button {
+    flex-shrink: 0;
+}
+
+
+/* DASHBOARD TWO-COLUMN LAYOUT */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .app-header,
+body.dark-mode .balance-section,
+body.dark-mode .form-section,
+body.dark-mode .transaction-section,
+body.dark-mode .chart-section,
+body.dark-mode .budget-section,
+body.dark-mode .app-footer {
+    background-color: #252525;
+    color: #f5f5f5;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+body.dark-mode .transaction-item {
+    border-color: #555555;
+}
+
+body.dark-mode button {
+    color: #ffffff;
+}
+
+body.dark-mode button:hover {
+    opacity: 0.85;
+}
